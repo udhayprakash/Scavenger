@@ -1,4 +1,3 @@
-import random
 import time
 import datetime
 import os
@@ -6,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup, SoupStrainer
 import classes.utility
 from colorama import Fore, Style
+import secrets
 
 iterator = 1
 tools = classes.utility.ScavUtility()
@@ -81,7 +81,7 @@ def getjuicystuff(tmpresponse):
                                 "href"] + " data/otherSensitivePastes/" + sensitivevalue + "_" + link["href"].replace(
                                 "/", ""))
 
-                        time.sleep(random.randint(5, 10))
+                        time.sleep(secrets.SystemRandom().randint(5, 10))
                     except Exception as eErr:
                         print(str(datetime.datetime.now()) + ": [-] " + Fore.RED + str(eErr) + Style.RESET_ALL)
                         continue
